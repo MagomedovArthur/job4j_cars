@@ -92,7 +92,7 @@ public class UserRepository {
         try {
             Query query = session.createQuery("from User");
             for (Object st : query.getResultList()) {
-                System.out.println(st);
+                resultList.add((User) st);
             }
         } catch (Exception e) {
             session.getTransaction().rollback();
