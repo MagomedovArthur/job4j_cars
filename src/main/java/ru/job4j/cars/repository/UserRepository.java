@@ -90,7 +90,7 @@ public class UserRepository {
         Session session = this.sf.openSession();
         List<User> resultList = new ArrayList<>();
         try {
-            Query query = session.createQuery("from User order by id");
+            Query<User> query = session.createQuery("from User order by id", User.class);
             resultList = query.list();
         } catch (Exception e) {
             session.getTransaction().rollback();
